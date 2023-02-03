@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './styles.module.css'
+import styles from "./styles.module.css"
 
 const Login = () => {
   const [data,setData] = useState({email: "" , password: ""});
@@ -9,13 +9,13 @@ const Login = () => {
   const handleChange = ({currentTarget: input})=>{
     setData({...data, [input.name]:input.value});
   };
-  
+
   return (
     <div>
-      <div className="login_container">
-        <div className="login_form_container">
-          <div className="left">
-            <form className="form_container" onSubmit={handleSubmit}>
+      <div className= {styles.login_container}>
+        <div className={styles.login_form_container}>
+          <div className={styles.left}>
+            <form className={styles.form_container} onSubmit={handleSubmit}>
               <h1>Login to Your Account</h1>
 						  <input
 							  type="email"
@@ -41,7 +41,7 @@ const Login = () => {
 						  </button>
 					  </form>
           </div>
-          <div className="right">
+          <div className={styles.right}>
             <h1>New Here ?</h1>
             <Link to="/signup">
               <button type="button" className={styles.white_btn}>

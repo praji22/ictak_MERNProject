@@ -10,7 +10,7 @@ const Signup = () => {
         email: "",
         phoneNumber: 0,
         password: "",
-        confirmPaswword: ""
+        confirmPassword: ""
     });
     const [error,setError] = useState("");
     const navigate = useNavigate();
@@ -21,20 +21,20 @@ const Signup = () => {
     
   return (
     <div>
-        <div className="signup_container">
+        <div className={styles.signup_container}>
             <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <div className="signup_form_container">
-                        <div className="left">
+                    <div className={styles.signup_form_container}>
+                        <div className={styles.left}>
                             <h1>Welcome Back</h1>
                             <Link to ="/login">
-                                <button type='button' className="white_butn">
+                                <button type='button' className={styles.white_butn}>
                                     Sign In
                                 </button>
                             </Link>
                         </div>
-                        <div className="right">
-                           <form className="form_container" onSubmit={handleSubmit}>
+                        <div className={styles.right}>
+                           <form className={styles.form_container} onSubmit={handleSubmit}>
                                 <h1>Create Account</h1>
                                 <input
 							        type="text"
@@ -63,12 +63,30 @@ const Signup = () => {
 							        required
 							        className={styles.input}
 						        />
+								<input
+							        type="text"
+							        placeholder="Phone Number"
+							        name="phoneNumber"
+							        onChange={handleChange}
+							        value={data.phoneNumber}
+							        required
+							        className={styles.input}
+						        />
 						        <input
 							        type="password"
 							        placeholder="Password"
 							        name="password"
 							        onChange={handleChange}
 							        value={data.password}
+							        required
+							        className={styles.input}
+						        />
+								<input
+							        type="password"
+							        placeholder="Confirm Password"
+							        name="password"
+							        onChange={handleChange}
+							        value={data.confirmPassword}
 							        required
 							        className={styles.input}
 						        />
