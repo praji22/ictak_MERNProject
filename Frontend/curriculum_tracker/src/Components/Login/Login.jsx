@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import styles from "./styles.module.css"
 
 const Login = () => {
@@ -9,6 +10,24 @@ const Login = () => {
   const handleChange = ({currentTarget: input})=>{
     setData({...data, [input.name]:input.value});
   };
+
+  const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const url = "http://localhost:3005/api/auth";
+			const { data: res } = await axios.post(url, data);
+			localStorage.setItem("token", res.data);
+			window.location = "/login";
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
 
   return (
     <div>
