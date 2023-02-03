@@ -4,30 +4,30 @@ const Schema = Mongoose.Schema
 
 const UserSchema = new Schema({
 
-    FName  : {
+    firstName  : {
         type : String,
         required : true
     },
-    LName  : {
+    lastName  : {
         type : String,
         required : true
     },
 
-    Email : {
+    email : {
         type :String,
         required : true
     },
-    PhoneNumber: {
+    phoneNumber: {
         type : Number,
         required : true
     },
 
-    Password : {
+    password : {
         type : String,
         required : true
     },
 
-     ConfirmPassword : {
+     confirmPassword : {
          type : String,
          required : true
      }
