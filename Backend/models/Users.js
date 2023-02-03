@@ -4,7 +4,11 @@ const Schema = Mongoose.Schema
 
 const UserSchema = new Schema({
 
-    Name  : {
+    FName  : {
+        type : String,
+        required : true
+    },
+    LName  : {
         type : String,
         required : true
     },
@@ -13,26 +17,24 @@ const UserSchema = new Schema({
         type :String,
         required : true
     },
+    PhoneNumber: {
+        type : Number,
+        required : true
+    },
 
     Password : {
         type : String,
         required : true
     },
 
-    // ConfirmPassword : {
-    //     type : String,
-    //     required : true
-    // },
+     ConfirmPassword : {
+         type : String,
+         required : true
+     }
 
-    Place : {
-        type : String,
-        required : true
-    },
+    
 
-    PhoneNumber: {
-        type : Number,
-        required : true
-    }
+    
 
 });
 
