@@ -31,19 +31,20 @@ app.post('/signup',async(req,res)=>{
             Name : req.body.Name,
             Email : req.body.Email,
             Password : Bcrypt.hashSync(req.body.Password,10),
-            ConfirmPassword  : Bcrypt.hashSync(req.body.ConfirmPassword,10),
+            // ConfirmPassword  : Bcrypt.hashSync(req.body.ConfirmPassword,10),
             Place : req.body.Place,
             PhoneNumber : req.body.PhoneNumber
         }
-        console.log(data);
+        // console.log(data);
         let User = await UserModel.findOne({Email : req.body.Email})
         if(!User){
             const newUser = new UserModel(data);
             const saveUser = await newUser.save();
             res.json(saveUser);
         }
-        return res.json({message :"Email already registered"});
-       
+        else{ 
+            res.send({message :"Email already registered"});
+        }
     } catch (error) {
         console.log(error)
                  

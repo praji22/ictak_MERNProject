@@ -19,10 +19,10 @@ const UserSchema = new Schema({
         required : true
     },
 
-    ConfirmPassword : {
-        type : String,
-        required : true
-    },
+    // ConfirmPassword : {
+    //     type : String,
+    //     required : true
+    // },
 
     Place : {
         type : String,
